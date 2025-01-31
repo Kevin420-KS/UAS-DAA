@@ -1,0 +1,34 @@
+@startuml
+start
+
+:Login;
+if (Apakah sudah memiliki akun?) then (ya)
+    :Masukkan username dan password;
+else (tidak)
+    :Buat akun sesuai peran;
+endif
+
+if (Role?) then (Admin)
+    :Kelola sistem;
+elseif (Penjual)
+    :Input produk;
+    :Notifikasi pesanan;
+elseif (Pembeli)
+    :Lihat daftar produk;
+    :Pilih produk;
+    :Checkout;
+    :Pilih opsi pengiriman;
+    :Pilih opsi pembayaran;
+    if (Pembayaran tunai?) then (ya)
+        :Bayar melalui Mitra;
+    else (tidak)
+        :Bayar dengan cashless;
+    endif
+elseif (Kurir)
+    :Ambil paket dari penjual;
+elseif (Mitra)
+    :Terima pembayaran tunai;
+endif
+
+stop
+@enduml

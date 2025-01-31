@@ -1,0 +1,20 @@
+@startuml
+actor Admin
+actor Penjual
+actor Pembeli
+actor Kurir
+actor Mitra
+
+rectangle "Sistem Online Shop" {
+    Admin -- (Kelola Stok)
+    Admin -- (Notifikasi Transaksi)
+    Penjual -- (Input Produk)
+    Penjual -- (Notifikasi Pesanan)
+    Pembeli -- (Lihat Produk)
+    Pembeli -- (Checkout)
+    Pembeli -- (Pembayaran)
+    Kurir -- (Ambil Paket)
+    Mitra -- (Terima Pembayaran)
+}
+
+@enduml

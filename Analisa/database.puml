@@ -1,0 +1,65 @@
+@startuml
+entity "Admin" {
+    + admin_id : INT
+    + username : VARCHAR
+    + password : VARCHAR
+}
+
+entity "Penjual" {
+    + penjual_id : INT
+    + username : VARCHAR
+    + password : VARCHAR
+    + email : VARCHAR
+}
+
+entity "Pembeli" {
+    + pembeli_id : INT
+    + username : VARCHAR
+    + password : VARCHAR
+    + email : VARCHAR
+}
+
+entity "Kurir" {
+    + kurir_id : INT
+    + nama : VARCHAR
+    + no_telepon : VARCHAR
+}
+
+entity "Mitra" {
+    + mitra_id : INT
+    + nama : VARCHAR
+    + alamat : VARCHAR
+}
+
+entity "Produk" {
+    + produk_id : INT
+    + nama_produk : VARCHAR
+    + harga : DECIMAL
+    + stok : INT
+    + kategori : VARCHAR
+}
+
+entity "Transaksi" {
+    + transaksi_id : INT
+    + pembeli_id : INT
+    + penjual_id : INT
+    + total_harga : DECIMAL
+    + status : VARCHAR
+}
+
+entity "Pengiriman" {
+    + pengiriman_id : INT
+    + transaksi_id : INT
+    + kurir_id : INT
+    + metode_pengiriman : VARCHAR
+    + biaya : DECIMAL
+}
+
+Admin --o Produk
+Penjual --o Produk
+Pembeli --o Transaksi
+Kurir --o Pengiriman
+Mitra --o Transaksi
+Transaksi --o Pengiriman
+
+@enduml
