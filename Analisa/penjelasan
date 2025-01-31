@@ -1,0 +1,61 @@
+Bisnis Online Shop dan Produktivitas
+A. Role:
+Admin sebagai pemilik website dan pengelola sistem.
+Penjual sebagai pemilik dagangan yang berjualan di website online shop.
+Pembeli sebagai pengguna yang membeli barang di website online shop.
+Kurir sebagai perantara yang mengirimkan barang dari penjual ke pembeli.
+Mitra sebagai perantara untuk pembayaran tunai jika pembeli tidak menggunakan metode cashless.
+B. Alur:
+1. Alur Login
+Pengguna (Admin/Penjual/Pembeli) harus melakukan login jika sudah memiliki akun. Jika belum, mereka akan diarahkan untuk membuat akun sesuai peran masing-masing.
+2. Alur Pembeli
+Pembeli dapat melihat daftar produk yang ditampilkan di website.
+Jika pembeli ingin membeli barang, mereka akan diarahkan ke halaman checkout yang berisi:
+Daftar barang yang akan dibeli.
+Jumlah dan harga total barang.
+Opsi pengiriman.
+Opsi pembayaran.
+Saat memilih opsi pengiriman, kurir akan menawarkan metode yang tersedia:
+Pengiriman Bersama (≤10kg) untuk dalam kota.
+Kargo (10-50kg) untuk antar kota.
+Kapal (100kg) untuk pengiriman antar pulau.
+Pesawat (≥50kg) untuk pengiriman internasional.
+Jika memilih pembayaran tunai, pembeli harus membayar melalui Mitra. Jika memilih pembayaran cashless, mereka dapat menggunakan e-money, debit, atau kredit.
+Setelah semua selesai, pembeli siap untuk checkout.
+3. Alur Penjual
+Penjual dapat menginput jumlah barang yang dijual tetapi tidak dapat mengubah stok setelahnya.
+Jika penjual salah menginput jumlah barang, sistem akan menyediakan fitur koreksi stok otomatis dalam batas tertentu. Jika koreksi melebihi batas, penjual harus menghubungi admin.
+Produk yang dapat dijual:
+Makanan siap saji (Bakso, Tahu, Mie)
+Buah-buahan
+Sayur-sayuran
+Box/Kardus/Kayu untuk membungkus barang
+Barang dijual mulai dari 1kg hingga 10kg (belum termasuk kemasan)
+Jika ada pesanan, sistem akan otomatis:
+Mengirim notifikasi email dan push notification ke penjual.
+Memberikan daftar barang yang harus dikirim.
+Penjual hanya menerima pembayaran setelah barang diterima tanpa cacat atau kerusakan.
+4. Alur Kurir
+Jika penjual datang ke kantor kurir, barang langsung diproses. Jika penjual tidak bisa datang, bisa memilih layanan "Jemput Paket" (dikenakan biaya tambahan).
+Biaya tambahan hanya dikenakan kepada penjual, bukan pembeli.
+Tarif pengiriman otomatis dihitung berdasarkan jarak dan berat:
+Bersama: Rp10.000 (Jabodetabek), Rp15.000 (Luar Jabodetabek)
+Kargo: Rp25.000 (Jabodetabek), Rp30.000 (Luar Jabodetabek)
+Kapal: Rp50.000 - Rp100.000 (tergantung berat dan tujuan)
+Pesawat: Rp100.000+ (tergantung negara tujuan, belum termasuk pajak)
+5. Alur Mitra
+Jika pembeli memilih pembayaran tunai, mereka harus pergi ke Mitra terdekat di wilayahnya.
+Setelah pembayaran berhasil, sistem otomatis mengirimkan konfirmasi ke:
+Penjual
+Kurir
+Admin
+6. Alur Admin
+Sistem otomatis akan mengelola stok berdasarkan transaksi. Admin hanya bisa mengubah stok dalam kondisi khusus yang tidak bisa diproses sistem.
+Sistem otomatis mengirim notifikasi kepada pembeli saat barang:
+Sudah dibayar.
+Sedang dalam pengiriman.
+Sudah diterima.
+Admin tidak membayar pembeli tetapi memeriksa transaksi dan memastikan sistem pembayaran berjalan dengan lancar.
+Jika suatu toko tidak aktif lebih dari 1 bulan, sistem akan memberikan peringatan otomatis ke admin.
+Sistem otomatis memberikan rekomendasi toko dengan penjualan terbanyak kepada pembeli.
+Audit otomatis dilakukan untuk mengecek apakah penjualan toko sesuai dengan stok yang tersedia. Admin hanya memeriksa jika ada kejanggalan.
